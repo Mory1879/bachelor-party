@@ -1,6 +1,6 @@
-import React from 'react';
-import App, { Container } from 'next/app';
-import Head from 'next/head';
+import React from "react";
+import App, { Container } from "next/app";
+import Head from "next/head";
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -13,24 +13,31 @@ export default class MyApp extends App {
     return { pageProps };
   }
 
+  componentDidMount() {
+    Notification.requestPermission().then(function(result) {
+      console.log(result);
+    });
+  }
+
   render() {
     const { Component, pageProps } = this.props;
 
     return (
       <Container>
         <Head>
-          <link
+          {/* <link
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap&subset=cyrillic'"
             rel="stylesheet"
             key="google-font-roboto"
-          />
+          /> */}
+          <title>Дарова, бандиты</title>
         </Head>
 
         <Component {...pageProps} />
 
         <style global jsx>{`
           * {
-            font-family: 'Roboto', sans-serif;
+            font-family: "Roboto", sans-serif;
             line-height: 1.25;
             font-size: 1rem;
             color: #8d8f91;
