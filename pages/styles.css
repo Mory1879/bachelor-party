@@ -1,21 +1,150 @@
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
   height: 100vh;
 }
 
-.countdown {
+.sideSection {
+  background-image: url('https://pp.userapi.com/c850720/v850720216/170063/8vsAJ2ZmFaY.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.mainSection {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 4rem;
+  position: relative;
+}
+.particles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: none;
+}
+
+.eventInfoWrapper {
+  
+}
+.eventInfoHeader {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.eventInfoTitle {
+
+}
+.eventInfoDate {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+}
+.dateDay {
+  font-size: 1.95rem;
+  color: #0CC8F0;
+  font-family: Roboto-Black;
+  letter-spacing: 2px;
+}
+
+.dateMonth {
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 3.5vw;
+  letter-spacing: 1px;
+  font-family: Roboto-Light;
+}
+
+.eventInfoGuests {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 45px 0;
+}
+
+.guestsTitle {
+  margin-bottom: 5px;
+  color: #0CC8F0;
+  text-transform: uppercase;
+}
+
+.guestsList {
+  color: #8d8f91;
+  letter-spacing: 1px;
+}
+
+
+.eventTimerWrapper {
+
+}
+.eventTimerTitle {
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #cdcdcd;
+
+}
+.timerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.timerCell {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.timerNum {
+  color: #0CC8F0;
+  font-family: Roboto-Black;
+  font-size: 3rem;
+  letter-spacing: 0.25rem;
+}
+
+.timerText {
+  text-transform: uppercase;
+  font-family: Roboto-Light;
+  letter-spacing: 0.03rem;
+}
+
+.countdown {
 }
 
 .title {
 }
 .timer {
+}
+
+
+h1 {
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: Roboto-Black;
+  color: #1E27E0;
+}
+
+@media (max-width: 720px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .sideSection {
+    display: none;
+  }
+  .dateDay {
+    font-family: Roboto-Regular;
+  }
+  .particles {
+    height: auto;
+  }
 }
