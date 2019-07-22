@@ -19,18 +19,18 @@ const interval = setInterval(() => {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     const notifTime = hours == 0 && minutes == 0 && seconds == 0;
-    const start = days == 0;
+    const start = days == 0 && hours == 0 && minutes == 5 && seconds == 0;
 
     if (notifTime) {
-      if (start) {
-        self.registration.showNotification("ВЫХОДИ БРАТАН", {
-          body: "ВРЕМЯ ТУСИТЬ",
-          vibrate: [200, 100, 200, 100, 200, 100, 200],
-          tag: "vibration-sample"
-        });
-      }
       self.registration.showNotification("До мальчишника осталось", {
         body: `${days} дней ${hours} часов ${minutes} минут ${seconds} секунд`,
+        vibrate: [200, 100, 200, 100, 200, 100, 200],
+        tag: "vibration-sample"
+      });
+    }
+    if (start) {
+      self.registration.showNotification("ВЫХОДИ БРАТАН", {
+        body: "5 МИНУТ И ВРЕМЯ ТУСИТЬ",
         vibrate: [200, 100, 200, 100, 200, 100, 200],
         tag: "vibration-sample"
       });
